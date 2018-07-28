@@ -13,9 +13,9 @@
 		0450FA11210CC69300ABA416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0450FA0F210CC69300ABA416 /* LaunchScreen.storyboard */; };
 		0450FA14210CC69300ABA416 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA13210CC69300ABA416 /* main.m */; };
 		0450FA1D210CC86100ABA416 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA1C210CC86100ABA416 /* ViewController.m */; };
-		0450FA28210CC8E900ABA416 /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA21210CC8E900ABA416 /* SkipList.cpp */; };
-		0450FA2B210CC95900ABA416 /* SEStatsMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA2A210CC95900ABA416 /* SEStatsMath.cpp */; };
 		0450FA31210CE18A00ABA416 /* StatIndicatorsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA30210CE18A00ABA416 /* StatIndicatorsController.mm */; };
+		0450FA3E210CF29900ABA416 /* SEStatsMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA34210CF29900ABA416 /* SEStatsMath.cpp */; };
+		0450FA3F210CF29900ABA416 /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA3C210CF29900ABA416 /* SkipList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,18 +29,18 @@
 		0450FA13210CC69300ABA416 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0450FA1B210CC86100ABA416 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0450FA1C210CC86100ABA416 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0450FA21210CC8E900ABA416 /* SkipList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkipList.cpp; sourceTree = "<group>"; };
-		0450FA22210CC8E900ABA416 /* IntegrityEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrityEnums.h; sourceTree = "<group>"; };
-		0450FA23210CC8E900ABA416 /* NodeRefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeRefs.h; sourceTree = "<group>"; };
-		0450FA24210CC8E900ABA416 /* RollingMedian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollingMedian.h; sourceTree = "<group>"; };
-		0450FA25210CC8E900ABA416 /* HeadNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadNode.h; sourceTree = "<group>"; };
-		0450FA26210CC8E900ABA416 /* SkipList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipList.h; sourceTree = "<group>"; };
-		0450FA27210CC8E900ABA416 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		0450FA29210CC95900ABA416 /* SEStatsMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEStatsMath.h; sourceTree = "<group>"; };
-		0450FA2A210CC95900ABA416 /* SEStatsMath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SEStatsMath.cpp; sourceTree = "<group>"; };
-		0450FA2C210CCDFE00ABA416 /* SEAccelerometerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEAccelerometerData.h; sourceTree = "<group>"; };
 		0450FA2F210CE18A00ABA416 /* StatIndicatorsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatIndicatorsController.h; sourceTree = "<group>"; };
 		0450FA30210CE18A00ABA416 /* StatIndicatorsController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = StatIndicatorsController.mm; sourceTree = "<group>"; };
+		0450FA33210CF29900ABA416 /* SEAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEAccelerometerData.h; sourceTree = "<group>"; };
+		0450FA34210CF29900ABA416 /* SEStatsMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SEStatsMath.cpp; sourceTree = "<group>"; };
+		0450FA35210CF29900ABA416 /* SEStatsMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEStatsMath.h; sourceTree = "<group>"; };
+		0450FA37210CF29900ABA416 /* HeadNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadNode.h; sourceTree = "<group>"; };
+		0450FA38210CF29900ABA416 /* IntegrityEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrityEnums.h; sourceTree = "<group>"; };
+		0450FA39210CF29900ABA416 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0450FA3A210CF29900ABA416 /* NodeRefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeRefs.h; sourceTree = "<group>"; };
+		0450FA3B210CF29900ABA416 /* RollingMedian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollingMedian.h; sourceTree = "<group>"; };
+		0450FA3C210CF29900ABA416 /* SkipList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkipList.cpp; sourceTree = "<group>"; };
+		0450FA3D210CF29900ABA416 /* SkipList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,32 +100,32 @@
 		0450FA1E210CC89900ABA416 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0450FA1F210CC8B900ABA416 /* StatsMaths */,
+				0450FA32210CF29900ABA416 /* StatsMaths */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		0450FA1F210CC8B900ABA416 /* StatsMaths */ = {
+		0450FA32210CF29900ABA416 /* StatsMaths */ = {
 			isa = PBXGroup;
 			children = (
-				0450FA20210CC8CF00ABA416 /* SkipList */,
-				0450FA2C210CCDFE00ABA416 /* SEAccelerometerData.h */,
-				0450FA29210CC95900ABA416 /* SEStatsMath.h */,
-				0450FA2A210CC95900ABA416 /* SEStatsMath.cpp */,
+				0450FA36210CF29900ABA416 /* SkipList */,
+				0450FA33210CF29900ABA416 /* SEAccelerometerData.h */,
+				0450FA35210CF29900ABA416 /* SEStatsMath.h */,
+				0450FA34210CF29900ABA416 /* SEStatsMath.cpp */,
 			);
 			path = StatsMaths;
 			sourceTree = "<group>";
 		};
-		0450FA20210CC8CF00ABA416 /* SkipList */ = {
+		0450FA36210CF29900ABA416 /* SkipList */ = {
 			isa = PBXGroup;
 			children = (
-				0450FA25210CC8E900ABA416 /* HeadNode.h */,
-				0450FA22210CC8E900ABA416 /* IntegrityEnums.h */,
-				0450FA27210CC8E900ABA416 /* Node.h */,
-				0450FA23210CC8E900ABA416 /* NodeRefs.h */,
-				0450FA24210CC8E900ABA416 /* RollingMedian.h */,
-				0450FA21210CC8E900ABA416 /* SkipList.cpp */,
-				0450FA26210CC8E900ABA416 /* SkipList.h */,
+				0450FA37210CF29900ABA416 /* HeadNode.h */,
+				0450FA38210CF29900ABA416 /* IntegrityEnums.h */,
+				0450FA39210CF29900ABA416 /* Node.h */,
+				0450FA3A210CF29900ABA416 /* NodeRefs.h */,
+				0450FA3B210CF29900ABA416 /* RollingMedian.h */,
+				0450FA3C210CF29900ABA416 /* SkipList.cpp */,
+				0450FA3D210CF29900ABA416 /* SkipList.h */,
 			);
 			path = SkipList;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0450FA28210CC8E900ABA416 /* SkipList.cpp in Sources */,
-				0450FA2B210CC95900ABA416 /* SEStatsMath.cpp in Sources */,
+				0450FA3F210CF29900ABA416 /* SkipList.cpp in Sources */,
 				0450FA1D210CC86100ABA416 /* ViewController.m in Sources */,
+				0450FA3E210CF29900ABA416 /* SEStatsMath.cpp in Sources */,
 				0450FA31210CE18A00ABA416 /* StatIndicatorsController.mm in Sources */,
 				0450FA14210CC69300ABA416 /* main.m in Sources */,
 				0450FA06210CC69300ABA416 /* AppDelegate.m in Sources */,

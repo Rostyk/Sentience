@@ -40,7 +40,7 @@
     statsMath->processAccelerometerData(data4);
     statsMath->processAccelerometerData(data5);
     
-    SEAccelerometerData median = statsMath->getMedian(0);
+    SEAccelerometerData median = statsMath->getCurrentDataFrameMedian();
     
     NSLog(@"MEDIAN. X:%d Y:%d Z:%d", median.x, median.y, median.z);
 }
