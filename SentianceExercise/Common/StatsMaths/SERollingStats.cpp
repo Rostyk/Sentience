@@ -6,23 +6,29 @@
 //  Copyright © 2018 Maliwan. All rights reserved.
 //
 
-#import "SEStatsMath.h"
+#import "SERollingStats.h"
 
-SEStatsMath::SEStatsMath(long medianDataFrame) {
+SERollingStats::SERollingStats(long medianDataFrame) {
     this->skippedListX = new OrderedStructs::SkipList::HeadNode<double>();
     this->skippedListY = new OrderedStructs::SkipList::HeadNode<double>();
     this->skippedListZ = new OrderedStructs::SkipList::HeadNode<double>();
     
+    this->varianceX = new SEVariance();
+    this->varianceY = new SEVariance();
+    this->varianceZ = new SEVariance();
     this->medianDataFrame = medianDataFrame;
 }
 
-SEStatsMath::~SEStatsMath() {
+SERollingStats::~SERollingStats() {
     delete skippedListX;
     delete skippedListY;
     delete skippedListZ;
+    delete varianceX;
+    delete varianceY;
+    delete varianceZ;
 }
 
-void SEStatsMath::processAccelerometerData(SEAccelerometerData data) {
+void SERollingStats::processAccelerometerData(const SEAccelerometerData &data) {
     skippedListX->insert(data.x);
     if (skippedListX->size() > medianDataFrame) {
         skippedListX->remove(skippedListX->at(skippedListX->size() - medianDataFrame));
@@ -38,10 +44,38 @@ void SEStatsMath::processAccelerometerData(SEAccelerometerData data) {
         skippedListZ->remove(skippedListZ->at(skippedListZ->size() - medianDataFrame));
     }
     
-    skippedListZ->lacksIntegrity();
+    varianceX->push(data.x);
+    varianceY->push(data.y);
+    varianceZ->push(data.z);
 }
 
-SEAccelerometerData SEStatsMath::getCurrentDataFrameMedian() {
+SEAccelerometerData SERollingStats::getStandartDeviation() {
+    double deviationX = varianceX->standardDeviation();
+    double deviationY = varianceY->standardDeviation();
+    double deviationZ = varianceZ->standardDeviation();
+    
+    SEAccelerometerData deviationData;
+    deviationData.x = deviationX;
+    deviationData.y = deviationY;
+    deviationData.z = deviationZ;
+    
+    return deviationData;
+}
+
+SEAccelerometerData SERollingStats::getMean() {
+    double meanX = varianceX->mean();
+    double meanY = varianceY->mean();
+    double meanZ = varianceZ->mean();
+    
+    SEAccelerometerData meanData;
+    meanData.x = meanX;
+    meanData.y = meanY;
+    meanData.z = meanZ;
+    
+    return meanData;
+}
+
+SEAccelerometerData SERollingStats::getCurrentDataFrameMedian() {
     SEAccelerometerData median;
     long middleElement = medianDataFrame / 2;
     

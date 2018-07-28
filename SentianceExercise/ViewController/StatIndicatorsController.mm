@@ -7,17 +7,17 @@
 //
 
 #import "StatIndicatorsController.h"
-#import "SEStatsMath.h"
+#import "SERollingStats.h"
 
 @implementation StatIndicatorsController {
-    SEStatsMath *statsMath;
+    SERollingStats *rollignStats;
 }
 
 - (id)init {
     self = [super init];
     
     if (self) {
-        statsMath = new SEStatsMath(4);
+        rollignStats = new SERollingStats(4);
     }
 
     return self;
@@ -34,19 +34,21 @@
     //{2, 6, 8, 11, 12};
     //{3, 12, 16, 17, 18};
     
-    statsMath->processAccelerometerData(data1);
-    statsMath->processAccelerometerData(data2);
-    statsMath->processAccelerometerData(data3);
-    statsMath->processAccelerometerData(data4);
-    statsMath->processAccelerometerData(data5);
+    rollignStats->processAccelerometerData(data1);
+    rollignStats->processAccelerometerData(data2);
+    rollignStats->processAccelerometerData(data3);
+    rollignStats->processAccelerometerData(data4);
+    rollignStats->processAccelerometerData(data5);
     
-    SEAccelerometerData median = statsMath->getCurrentDataFrameMedian();
+    SEAccelerometerData median = rollignStats->getCurrentDataFrameMedian();
     
-    NSLog(@"MEDIAN. X:%d Y:%d Z:%d", median.x, median.y, median.z);
+    SEAccelerometerData mean = rollignStats->getMean();
+    SEAccelerometerData deviation = rollignStats->getStandartDeviation();
+    
 }
 
 - (void)dealloc {
-    delete statsMath;
+    delete rollignStats;
 }
 
 @end
