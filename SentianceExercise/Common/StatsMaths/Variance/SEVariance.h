@@ -7,15 +7,30 @@
 //
 #include "math.h"
 
+#ifndef _SEVariance_
+#define _SEVariance_
+
 class SEVariance {
 public:
-    SEVariance() : m_n(0) {}
+    SEVariance() : m_n(0) {
+        max = 0;
+        min = 0;
+    }
     
     void clear() {
         m_n = 0;
     }
     
     void push(double x) {
+        
+        if (x > max) {
+            max = x;
+        }
+        
+        if (x < min) {
+            min = x;
+        }
+        
         m_n++;
         
         // See Knuth TAOCP vol 2, 3rd edition, page 232
@@ -50,8 +65,19 @@ public:
         return sqrt(variance());
     }
     
+    double allTimeMax() const {
+        return max;
+    }
+    
+    double allTimeMin() const {
+        return min;
+    }
+    
 private:
     int m_n;
     double m_oldM, m_newM, m_oldS, m_newS;
+    
+    double max, min;
 };
 
+#endif

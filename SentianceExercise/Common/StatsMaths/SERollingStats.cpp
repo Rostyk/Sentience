@@ -8,98 +8,107 @@
 
 #import "SERollingStats.h"
 
-SERollingStats::SERollingStats(long medianDataFrame) {
-    this->skippedListX = new OrderedStructs::SkipList::HeadNode<double>();
-    this->skippedListY = new OrderedStructs::SkipList::HeadNode<double>();
-    this->skippedListZ = new OrderedStructs::SkipList::HeadNode<double>();
-    
-    this->varianceX = new SEVariance();
-    this->varianceY = new SEVariance();
-    this->varianceZ = new SEVariance();
-    this->medianDataFrame = medianDataFrame;
+SERollingStats::SERollingStats(long dataFrame) {
+    this->indicatorX = new SERollingIndicator(dataFrame);
+    this->indicatorY = new SERollingIndicator(dataFrame);
+    this->indicatorZ = new SERollingIndicator(dataFrame);
 }
 
 SERollingStats::~SERollingStats() {
-    delete skippedListX;
-    delete skippedListY;
-    delete skippedListZ;
-    delete varianceX;
-    delete varianceY;
-    delete varianceZ;
+    delete indicatorX;
+    delete indicatorY;
+    delete indicatorY;
 }
 
 void SERollingStats::processAccelerometerData(const SEAccelerometerData &data) {
-    skippedListX->insert(data.x);
-    if (skippedListX->size() > medianDataFrame) {
-        skippedListX->remove(skippedListX->at(skippedListX->size() - medianDataFrame));
-    }
-    
-    skippedListY->insert(data.y);
-    if (skippedListY->size() > medianDataFrame) {
-        skippedListY->remove(skippedListY->at(skippedListY->size() - medianDataFrame));
-    }
-    
-    skippedListZ->insert(data.z);
-    if (skippedListZ->size() > medianDataFrame) {
-        skippedListZ->remove(skippedListZ->at(skippedListZ->size() - medianDataFrame));
-    }
-    
-    varianceX->push(data.x);
-    varianceY->push(data.y);
-    varianceZ->push(data.z);
+    indicatorX->processAccelerometerValue(data.x);
+    indicatorY->processAccelerometerValue(data.y);
+    indicatorZ->processAccelerometerValue(data.z);
 }
 
-SEAccelerometerData SERollingStats::getStandartDeviation() {
-    double deviationX = varianceX->standardDeviation();
-    double deviationY = varianceY->standardDeviation();
-    double deviationZ = varianceZ->standardDeviation();
-    
+SEAccelerometerData SERollingStats::getCurrentDataFrameStandartDeviation() {
     SEAccelerometerData deviationData;
-    deviationData.x = deviationX;
-    deviationData.y = deviationY;
-    deviationData.z = deviationZ;
+    deviationData.x = indicatorX->getCurrentDataFrameDeviation();
+    deviationData.y = indicatorY->getCurrentDataFrameDeviation();
+    deviationData.z = indicatorZ->getCurrentDataFrameDeviation();
     
     return deviationData;
 }
 
-SEAccelerometerData SERollingStats::getMean() {
-    double meanX = varianceX->mean();
-    double meanY = varianceY->mean();
-    double meanZ = varianceZ->mean();
-    
+SEAccelerometerData SERollingStats::getCurrentDataFrameMean() {
     SEAccelerometerData meanData;
-    meanData.x = meanX;
-    meanData.y = meanY;
-    meanData.z = meanZ;
+    meanData.x = indicatorX->getCurrentDataFrameMean();
+    meanData.y = indicatorY->getCurrentDataFrameMean();
+    meanData.z = indicatorZ->getCurrentDataFrameMean();
     
     return meanData;
 }
 
 SEAccelerometerData SERollingStats::getCurrentDataFrameMedian() {
     SEAccelerometerData median;
-    long middleElement = medianDataFrame / 2;
     
-    if (skippedListX->size() % 2) {
-        median.x = skippedListX->at(middleElement);
-    }
-    else {
-        median.x = (skippedListX->at(middleElement) + skippedListX->at(middleElement - 1)) / 2;
-    }
-    
-    if (skippedListY->size() % 2) {
-        median.y = skippedListY->at(middleElement);
-    }
-    else {
-        median.y = (skippedListY->at(middleElement) + skippedListY->at(middleElement - 1)) / 2;
-    }
-    
-    if (skippedListZ->size() % 2) {
-        median.z = skippedListZ->at(middleElement);
-    }
-    else {
-        median.z = (skippedListZ->at(middleElement) + skippedListZ->at(middleElement - 1)) / 2;
-    }
+    median.x = indicatorX->getCurrentDataFrameMedian();
+    median.y = indicatorY->getCurrentDataFrameMedian();
+    median.z = indicatorZ->getCurrentDataFrameMedian();
     
     return median;
 }
 
+SEAccelerometerData SERollingStats::getCurrentDataFrameMax() {
+    SEAccelerometerData max;
+    
+    max.x = indicatorX->getCurrentDataFrameMax();
+    max.y = indicatorY->getCurrentDataFrameMax();
+    max.z = indicatorZ->getCurrentDataFrameMax();
+    return max;
+}
+
+SEAccelerometerData SERollingStats::getCurrentDataFrameMin() {
+    SEAccelerometerData min;
+    
+    min.x = indicatorX->getCurrentDataFrameMin();
+    min.y = indicatorY->getCurrentDataFrameMin();
+    min.z = indicatorZ->getCurrentDataFrameMin();
+    return min;
+}
+
+SEAccelerometerData SERollingStats::getAllTimeStandardDeviation() {
+    SEAccelerometerData deviation;
+    
+    deviation.x = indicatorX->getAllTimeStandardDeviation();
+    deviation.y = indicatorY->getAllTimeStandardDeviation();
+    deviation.z = indicatorZ->getAllTimeStandardDeviation();
+    return deviation;
+}
+
+SEAccelerometerData SERollingStats::getAllTimeMean() {
+    SEAccelerometerData mean;
+    
+    mean.x = indicatorX->getAllTimeMean();
+    mean.y = indicatorY->getAllTimeMean();
+    mean.z = indicatorZ->getAllTimeMean();
+    return mean;
+}
+
+SEAccelerometerData SERollingStats::getAllTimeMedian() {
+    SEAccelerometerData median;
+    return median;
+}
+
+SEAccelerometerData SERollingStats::getAllTimeMax() {
+    SEAccelerometerData max;
+    
+    max.x = indicatorX->getAllTimeMax();
+    max.y = indicatorY->getAllTimeMax();
+    max.z = indicatorZ->getAllTimeMax();
+    return max;
+}
+
+SEAccelerometerData SERollingStats::getAllTimeMin() {
+    SEAccelerometerData min;
+    
+    min.x = indicatorX->getAllTimeMin();
+    min.y = indicatorY->getAllTimeMin();
+    min.z = indicatorZ->getAllTimeMin();
+    return min;
+}

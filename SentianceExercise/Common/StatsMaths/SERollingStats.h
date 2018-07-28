@@ -6,33 +6,36 @@
 //  Copyright © 2018 Maliwan. All rights reserved.
 //
 
-#include <vector>
 #include "SkipList.h"
 #include "SEAccelerometerData.h"
 #include "SEVariance.h"
+#include "SERollingIndicator.h"
 
 class SERollingStats {
 public:
     
-    SERollingStats(const long medianDataFrame);
+    SERollingStats(const long dataFrame);
     ~SERollingStats();
     void processAccelerometerData(const SEAccelerometerData &data);
     
     SEAccelerometerData getAllTimeMedian();
     SEAccelerometerData getCurrentDataFrameMedian();
     
-    SEAccelerometerData getStandartDeviation();
-    SEAccelerometerData getMean();
+    SEAccelerometerData getAllTimeStandardDeviation();
+    SEAccelerometerData getCurrentDataFrameStandartDeviation();
+    
+    SEAccelerometerData getAllTimeMean();
+    SEAccelerometerData getCurrentDataFrameMean();
+    
+    SEAccelerometerData getAllTimeMax();
+    SEAccelerometerData getCurrentDataFrameMax();
+    
+    SEAccelerometerData getAllTimeMin();
+    SEAccelerometerData getCurrentDataFrameMin();
     
 private:
-    OrderedStructs::SkipList::HeadNode<double> *skippedListX;
-    OrderedStructs::SkipList::HeadNode<double> *skippedListY;
-    OrderedStructs::SkipList::HeadNode<double> *skippedListZ;
-    
-    SEVariance *varianceX;
-    SEVariance *varianceY;
-    SEVariance *varianceZ;
-    
-    long medianDataFrame;
+    SERollingIndicator *indicatorX;
+    SERollingIndicator *indicatorY;
+    SERollingIndicator *indicatorZ;
 };
 

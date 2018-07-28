@@ -40,10 +40,19 @@
     rollignStats->processAccelerometerData(data4);
     rollignStats->processAccelerometerData(data5);
     
-    SEAccelerometerData median = rollignStats->getCurrentDataFrameMedian();
+    SEAccelerometerData last5SecMedian = rollignStats->getCurrentDataFrameMedian();
+    SEAccelerometerData last5SecMean = rollignStats->getCurrentDataFrameMean();
+    SEAccelerometerData last5SecDeviation = rollignStats->getCurrentDataFrameStandartDeviation();
+    SEAccelerometerData last5SecMax = rollignStats->getCurrentDataFrameMax();
+    SEAccelerometerData last5SecMin = rollignStats->getCurrentDataFrameMin();
     
-    SEAccelerometerData mean = rollignStats->getMean();
-    SEAccelerometerData deviation = rollignStats->getStandartDeviation();
+    //SEAccelerometerData allTimeMedian = rollignStats->getAllTimeMedian();
+    SEAccelerometerData allTimeMean = rollignStats->getAllTimeMean();
+    SEAccelerometerData allTimeDeviation = rollignStats->getAllTimeStandardDeviation();
+    SEAccelerometerData allTimeMax = rollignStats->getAllTimeMax();
+    SEAccelerometerData alLTimeMin = rollignStats->getAllTimeMean();
+    
+    int I = 0;
     
 }
 
