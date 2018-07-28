@@ -17,13 +17,15 @@
     self = [super init];
     
     if (self) {
-        rollignStats = new SERollingStats(4);
+        rollignStats = new SERollingStats(5);
     }
 
     return self;
 }
 
 - (void)test {
+    
+    SEAccelerometerData data0 = {100.0, 200.0, 300.0};
     SEAccelerometerData data1 = {1.0, 2.0, 3.0};
     SEAccelerometerData data2 = {2.0, 6.0, 17.0};
     SEAccelerometerData data3 = {4.0, 8.0, 18.0};
@@ -34,6 +36,7 @@
     //{2, 6, 8, 11, 12};
     //{3, 12, 16, 17, 18};
     
+    rollignStats->processAccelerometerData(data0);
     rollignStats->processAccelerometerData(data1);
     rollignStats->processAccelerometerData(data2);
     rollignStats->processAccelerometerData(data3);

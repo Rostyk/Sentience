@@ -12,7 +12,7 @@
 SERollingIndicator::SERollingIndicator(long dataFrame) {
     this->medianSkippedList = new OrderedStructs::SkipList::HeadNode<double>();
     this->allTimeVariance = new SEVariance();
-    this->currentDataFrameVector = new std::vector<double>(dataFrame);
+    this->currentDataFrameVector = new std::vector<double>();
     
     this->dataFrame = dataFrame;
 }
@@ -25,15 +25,14 @@ SERollingIndicator::~SERollingIndicator() {
 
 void SERollingIndicator::processAccelerometerValue(const double &value) {
     medianSkippedList->insert(value);
+    allTimeVariance->push(value);
+    currentDataFrameVector->push_back(value);
     
     //start rolling forward
     if (medianSkippedList->size() > dataFrame) {
         medianSkippedList->remove(medianSkippedList->at(medianSkippedList->size() - dataFrame));
         currentDataFrameVector->erase(currentDataFrameVector->begin());
     }
-    
-    allTimeVariance->push(value);
-    currentDataFrameVector->push_back(value);
 }
 
 double SERollingIndicator::getAllTimeStandardDeviation() {
