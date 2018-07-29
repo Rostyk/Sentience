@@ -14,10 +14,23 @@
 		0450FA14210CC69300ABA416 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA13210CC69300ABA416 /* main.m */; };
 		0450FA1D210CC86100ABA416 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA1C210CC86100ABA416 /* ViewController.m */; };
 		0450FA31210CE18A00ABA416 /* StatIndicatorsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA30210CE18A00ABA416 /* StatIndicatorsController.mm */; };
-		0450FA3E210CF29900ABA416 /* SERollingStats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA34210CF29900ABA416 /* SERollingStats.cpp */; };
 		0450FA3F210CF29900ABA416 /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA3C210CF29900ABA416 /* SkipList.cpp */; };
-		0450FA46210D028000ABA416 /* SERollingIndicator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA45210D028000ABA416 /* SERollingIndicator.cpp */; };
+		0450FA4F210DC96400ABA416 /* SentianceExerciseTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA4E210DC96400ABA416 /* SentianceExerciseTests.mm */; };
+		0450FA56210DC98500ABA416 /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA3C210CF29900ABA416 /* SkipList.cpp */; };
+		0450FA5D210DCEEE00ABA416 /* DataSeeder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA58210DCA5400ABA416 /* DataSeeder.mm */; };
+		0450FA65210DD80D00ABA416 /* StatIndicatorsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA30210CE18A00ABA416 /* StatIndicatorsController.mm */; };
+		0450FA6B210DE4FE00ABA416 /* NSArray+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FA6A210DE4FE00ABA416 /* NSArray+Stats.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0450FA51210DC96400ABA416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0450F9F9210CC69300ABA416 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0450FA00210CC69300ABA416;
+			remoteInfo = SentianceExercise;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0450FA01210CC69300ABA416 /* SentianceExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentianceExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +46,6 @@
 		0450FA2F210CE18A00ABA416 /* StatIndicatorsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatIndicatorsController.h; sourceTree = "<group>"; };
 		0450FA30210CE18A00ABA416 /* StatIndicatorsController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = StatIndicatorsController.mm; sourceTree = "<group>"; };
 		0450FA33210CF29900ABA416 /* SEAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEAccelerometerData.h; sourceTree = "<group>"; };
-		0450FA34210CF29900ABA416 /* SERollingStats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SERollingStats.cpp; sourceTree = "<group>"; };
 		0450FA35210CF29900ABA416 /* SERollingStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SERollingStats.h; sourceTree = "<group>"; };
 		0450FA37210CF29900ABA416 /* HeadNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadNode.h; sourceTree = "<group>"; };
 		0450FA38210CF29900ABA416 /* IntegrityEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrityEnums.h; sourceTree = "<group>"; };
@@ -44,11 +56,26 @@
 		0450FA3D210CF29900ABA416 /* SkipList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipList.h; sourceTree = "<group>"; };
 		0450FA42210CF8DB00ABA416 /* SEVariance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEVariance.h; sourceTree = "<group>"; };
 		0450FA44210D027F00ABA416 /* SERollingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SERollingIndicator.h; sourceTree = "<group>"; };
-		0450FA45210D028000ABA416 /* SERollingIndicator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SERollingIndicator.cpp; sourceTree = "<group>"; };
+		0450FA47210DB40500ABA416 /* Measurable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Measurable.h; sourceTree = "<group>"; };
+		0450FA4C210DC96400ABA416 /* SentianceExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SentianceExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0450FA4E210DC96400ABA416 /* SentianceExerciseTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SentianceExerciseTests.mm; sourceTree = "<group>"; };
+		0450FA50210DC96400ABA416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0450FA57210DCA5400ABA416 /* DataSeeder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSeeder.h; sourceTree = "<group>"; };
+		0450FA58210DCA5400ABA416 /* DataSeeder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DataSeeder.mm; sourceTree = "<group>"; };
+		0450FA67210DDC6900ABA416 /* OperatorCallsCountHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorCallsCountHolder.h; sourceTree = "<group>"; };
+		0450FA69210DE4FE00ABA416 /* NSArray+Stats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Stats.h"; sourceTree = "<group>"; };
+		0450FA6A210DE4FE00ABA416 /* NSArray+Stats.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Stats.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0450F9FE210CC69300ABA416 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0450FA49210DC96400ABA416 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0450FA03210CC69300ABA416 /* SentianceExercise */,
+				0450FA4D210DC96400ABA416 /* SentianceExerciseTests */,
 				0450FA02210CC69300ABA416 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0450FA01210CC69300ABA416 /* SentianceExercise.app */,
+				0450FA4C210DC96400ABA416 /* SentianceExerciseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +133,7 @@
 		0450FA1E210CC89900ABA416 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0450FA68210DE4E500ABA416 /* StatCategories */,
 				0450FA32210CF29900ABA416 /* StatsMaths */,
 			);
 			path = Common;
@@ -116,9 +146,9 @@
 				0450FA36210CF29900ABA416 /* SkipList */,
 				0450FA33210CF29900ABA416 /* SEAccelerometerData.h */,
 				0450FA35210CF29900ABA416 /* SERollingStats.h */,
-				0450FA34210CF29900ABA416 /* SERollingStats.cpp */,
 				0450FA44210D027F00ABA416 /* SERollingIndicator.h */,
-				0450FA45210D028000ABA416 /* SERollingIndicator.cpp */,
+				0450FA47210DB40500ABA416 /* Measurable.h */,
+				0450FA67210DDC6900ABA416 /* OperatorCallsCountHolder.h */,
 			);
 			path = StatsMaths;
 			sourceTree = "<group>";
@@ -145,6 +175,26 @@
 			path = Variance;
 			sourceTree = "<group>";
 		};
+		0450FA4D210DC96400ABA416 /* SentianceExerciseTests */ = {
+			isa = PBXGroup;
+			children = (
+				0450FA4E210DC96400ABA416 /* SentianceExerciseTests.mm */,
+				0450FA50210DC96400ABA416 /* Info.plist */,
+				0450FA57210DCA5400ABA416 /* DataSeeder.h */,
+				0450FA58210DCA5400ABA416 /* DataSeeder.mm */,
+			);
+			path = SentianceExerciseTests;
+			sourceTree = "<group>";
+		};
+		0450FA68210DE4E500ABA416 /* StatCategories */ = {
+			isa = PBXGroup;
+			children = (
+				0450FA69210DE4FE00ABA416 /* NSArray+Stats.h */,
+				0450FA6A210DE4FE00ABA416 /* NSArray+Stats.m */,
+			);
+			path = StatCategories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +215,24 @@
 			productReference = 0450FA01210CC69300ABA416 /* SentianceExercise.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0450FA4B210DC96400ABA416 /* SentianceExerciseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0450FA53210DC96400ABA416 /* Build configuration list for PBXNativeTarget "SentianceExerciseTests" */;
+			buildPhases = (
+				0450FA48210DC96400ABA416 /* Sources */,
+				0450FA49210DC96400ABA416 /* Frameworks */,
+				0450FA4A210DC96400ABA416 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0450FA52210DC96400ABA416 /* PBXTargetDependency */,
+			);
+			name = SentianceExerciseTests;
+			productName = SentianceExerciseTests;
+			productReference = 0450FA4C210DC96400ABA416 /* SentianceExerciseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +245,11 @@
 					0450FA00210CC69300ABA416 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					0450FA4B210DC96400ABA416 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0450FA00210CC69300ABA416;
 					};
 				};
 			};
@@ -194,6 +267,7 @@
 			projectRoot = "";
 			targets = (
 				0450FA00210CC69300ABA416 /* SentianceExercise */,
+				0450FA4B210DC96400ABA416 /* SentianceExerciseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +283,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0450FA4A210DC96400ABA416 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -218,15 +299,33 @@
 			files = (
 				0450FA3F210CF29900ABA416 /* SkipList.cpp in Sources */,
 				0450FA1D210CC86100ABA416 /* ViewController.m in Sources */,
-				0450FA46210D028000ABA416 /* SERollingIndicator.cpp in Sources */,
-				0450FA3E210CF29900ABA416 /* SERollingStats.cpp in Sources */,
 				0450FA31210CE18A00ABA416 /* StatIndicatorsController.mm in Sources */,
 				0450FA14210CC69300ABA416 /* main.m in Sources */,
+				0450FA6B210DE4FE00ABA416 /* NSArray+Stats.m in Sources */,
 				0450FA06210CC69300ABA416 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0450FA48210DC96400ABA416 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0450FA5D210DCEEE00ABA416 /* DataSeeder.mm in Sources */,
+				0450FA56210DC98500ABA416 /* SkipList.cpp in Sources */,
+				0450FA4F210DC96400ABA416 /* SentianceExerciseTests.mm in Sources */,
+				0450FA65210DD80D00ABA416 /* StatIndicatorsController.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0450FA52210DC96400ABA416 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0450FA00210CC69300ABA416 /* SentianceExercise */;
+			targetProxy = 0450FA51210DC96400ABA416 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0450FA0A210CC69300ABA416 /* Main.storyboard */ = {
@@ -382,6 +481,36 @@
 			};
 			name = Release;
 		};
+		0450FA54210DC96400ABA416 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ULZZ4979Q;
+				INFOPLIST_FILE = SentianceExerciseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddragons.inspectorapp.SentianceExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SentianceExercise.app/SentianceExercise";
+			};
+			name = Debug;
+		};
+		0450FA55210DC96400ABA416 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ULZZ4979Q;
+				INFOPLIST_FILE = SentianceExerciseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddragons.inspectorapp.SentianceExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SentianceExercise.app/SentianceExercise";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +528,15 @@
 			buildConfigurations = (
 				0450FA18210CC69300ABA416 /* Debug */,
 				0450FA19210CC69300ABA416 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0450FA53210DC96400ABA416 /* Build configuration list for PBXNativeTarget "SentianceExerciseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0450FA54210DC96400ABA416 /* Debug */,
+				0450FA55210DC96400ABA416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,19 +10,19 @@
 #ifndef _SEVariance_
 #define _SEVariance_
 
+template <class T>
 class SEVariance {
 public:
-    SEVariance() : m_n(0) {
-        max = 0;
-        min = 0;
+    
+    SEVariance<T>() {
+        
     }
     
     void clear() {
         m_n = 0;
     }
     
-    void push(double x) {
-        
+    void push(T x) {
         if (x > max) {
             max = x;
         }
@@ -34,7 +34,7 @@ public:
         m_n++;
         
         // See Knuth TAOCP vol 2, 3rd edition, page 232
-        if (m_n == 1)
+        if (m_n == T(1))
         {
             m_oldM = m_newM = x;
             m_oldS = 0.0;
@@ -53,19 +53,19 @@ public:
         return m_n;
     }
     
-    double mean() const {
+    T mean() const {
         return (m_n > 0) ? m_newM : 0.0;
     }
     
-    double variance() const {
-        return ( (m_n > 1) ? m_newS/(m_n - 1) : 0.0 );
+    T variance() const {
+        return ( (m_n > 1) ? m_newS/(m_n - 1.0) : T(0.0) );
     }
     
-    double standardDeviation() const {
+    T standardDeviation() const {
         return sqrt(variance());
     }
     
-    double allTimeMax() const {
+    T allTimeMax() const {
         return max;
     }
     
@@ -74,10 +74,10 @@ public:
     }
     
 private:
-    int m_n;
-    double m_oldM, m_newM, m_oldS, m_newS;
+    T m_n;
+    T m_oldM, m_newM, m_oldS, m_newS;
     
-    double max, min;
+    T max, min;
 };
 
 #endif

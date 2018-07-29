@@ -7,17 +7,18 @@
 //
 
 #import "StatIndicatorsController.h"
-#import "SERollingStats.h"
+#include "SERollingStats.h"
+#include "Measurable.h"
 
 @implementation StatIndicatorsController {
-    SERollingStats *rollignStats;
+    SERollingStats<Measurable> *rollignStats;
 }
 
 - (id)init {
     self = [super init];
     
     if (self) {
-        rollignStats = new SERollingStats(5);
+        rollignStats = new SERollingStats<Measurable>(3);
     }
 
     return self;
@@ -25,35 +26,32 @@
 
 - (void)test {
     
-    SEAccelerometerData data0 = {100.0, 200.0, 300.0};
-    SEAccelerometerData data1 = {1.0, 2.0, 3.0};
-    SEAccelerometerData data2 = {2.0, 6.0, 17.0};
-    SEAccelerometerData data3 = {4.0, 8.0, 18.0};
-    SEAccelerometerData data4 = {6.0, 11.0, 12.0};
-    SEAccelerometerData data5 = {10.0, 12.0, 16.0};
-    
-    //{1, 2, 4, 6, 10};
-    //{2, 6, 8, 11, 12};
-    //{3, 12, 16, 17, 18};
+    SEAccelerometerData<Measurable> data0 = {Measurable(1.0), Measurable(2.0), Measurable(3.0)};
+    SEAccelerometerData<Measurable> data1 = {Measurable(100.0), Measurable(200.0), Measurable(300.0)};
+    SEAccelerometerData<Measurable> data2 = {Measurable(2.0), Measurable(6.0), Measurable(17.0)};
+    SEAccelerometerData<Measurable> data3 = {Measurable(4.0), Measurable(8.0), Measurable(18.0)};
+
     
     rollignStats->processAccelerometerData(data0);
     rollignStats->processAccelerometerData(data1);
     rollignStats->processAccelerometerData(data2);
     rollignStats->processAccelerometerData(data3);
-    rollignStats->processAccelerometerData(data4);
-    rollignStats->processAccelerometerData(data5);
     
-    SEAccelerometerData last5SecMedian = rollignStats->getCurrentDataFrameMedian();
-    SEAccelerometerData last5SecMean = rollignStats->getCurrentDataFrameMean();
-    SEAccelerometerData last5SecDeviation = rollignStats->getCurrentDataFrameStandartDeviation();
-    SEAccelerometerData last5SecMax = rollignStats->getCurrentDataFrameMax();
-    SEAccelerometerData last5SecMin = rollignStats->getCurrentDataFrameMin();
+    /*rollignStats->processAccelerometerData(data3);
+    rollignStats->processAccelerometerData(data4);
+    rollignStats->processAccelerometerData(data5);*/
+    
+    SEAccelerometerData<Measurable> last5SecMedian = rollignStats->getCurrentDataFrameMedian();
+    SEAccelerometerData<Measurable> last5SecMean = rollignStats->getCurrentDataFrameMean();
+    SEAccelerometerData<Measurable> last5SecDeviation = rollignStats->getCurrentDataFrameStandartDeviation();
+    SEAccelerometerData<Measurable> last5SecMax = rollignStats->getCurrentDataFrameMax();
+    SEAccelerometerData<Measurable> last5SecMin = rollignStats->getCurrentDataFrameMin();
     
     //SEAccelerometerData allTimeMedian = rollignStats->getAllTimeMedian();
-    SEAccelerometerData allTimeMean = rollignStats->getAllTimeMean();
-    SEAccelerometerData allTimeDeviation = rollignStats->getAllTimeStandardDeviation();
-    SEAccelerometerData allTimeMax = rollignStats->getAllTimeMax();
-    SEAccelerometerData alLTimeMin = rollignStats->getAllTimeMean();
+    SEAccelerometerData<Measurable> allTimeMean = rollignStats->getAllTimeMean();
+    SEAccelerometerData<Measurable> allTimeDeviation = rollignStats->getAllTimeStandardDeviation();
+    SEAccelerometerData<Measurable> allTimeMax = rollignStats->getAllTimeMax();
+    SEAccelerometerData<Measurable> alLTimeMin = rollignStats->getAllTimeMean();
     
     int I = 0;
     

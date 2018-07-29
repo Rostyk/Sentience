@@ -9,10 +9,11 @@
 #ifndef SEAccelerometerData_h
 #define SEAccelerometerData_h
 
+template <class T>
 struct SEAccelerometerData {
-    double x;
-    double y;
-    double z;
+    T x;
+    T y;
+    T z;
 };
 
 #endif /* SEAccelerometerData_h */
